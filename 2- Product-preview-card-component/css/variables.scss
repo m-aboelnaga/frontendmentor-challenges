@@ -1,0 +1,12 @@
+:root {
+    --bg-color: #F2EBE4;
+    --grey-1: #9A9695;
+    --green-1: #3D8168;
+    --green-2: #1A4031;
+}
+
+@mixin tab {
+    @media only screen and (min-width:800px) {
+        @content
+    }
+}

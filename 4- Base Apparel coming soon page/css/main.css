@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Overpass&display=swap");
+:root {
+  --Desaturated-Red: hsl(0, 36%, 70%);
+  --Soft-Red: hsl(0, 93%, 68%);
+  --Dark-Grayish-Red: hsl(0, 6%, 24%);
+  --gradinet-1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  --gradinet-2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  --font: "Josefin Sans", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.hero {
+  font-family: var(--font);
+  min-height: 100vh;
+  background: url("../images/bg-pattern-desktop.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media only screen and (min-width: 901px) {
+  .hero {
+    display: grid;
+    grid-template-areas: "logo img" "info img";
+    grid-template-columns: 55% 1fr;
+    grid-template-rows: 5vh 1fr;
+    padding-left: 15rem;
+  }
+}
+.hero__img {
+  grid-area: img;
+  justify-self: end;
+}
+.hero__img img {
+  width: 100%;
+}
+@media only screen and (min-width: 901px) {
+  .hero__img img {
+    width: auto;
+    height: 100%;
+  }
+}
+.hero .logo {
+  margin: 2rem;
+  grid-area: logo;
+}
+.hero .logo img {
+  height: 5vh;
+}
+@media only screen and (min-width: 901px) {
+  .hero .logo {
+    justify-self: start;
+  }
+  .hero .logo img {
+    margin-top: 6rem;
+    height: 4rem;
+  }
+}
+.hero .info {
+  grid-area: info;
+  text-align: center;
+  padding: 2rem;
+}
+@media only screen and (min-width: 901px) {
+  .hero .info {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 8rem;
+    align-self: center;
+    text-align: left;
+  }
+}
+.hero .info h1 {
+  font-weight: 600;
+  letter-spacing: 5px;
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  text-transform: uppercase;
+}
+.hero .info h1 span {
+  color: var(--Desaturated-Red);
+  display: block;
+  font-weight: 300;
+}
+.hero .info p {
+  color: var(--Desaturated-Red);
+  line-height: 1.8;
+  font-size: clamp(1.2rem, 5vw, 3rem);
+  font-weight: 400;
+}
+@media only screen and (min-width: 901px) {
+  .hero .info p {
+    font-size: 2.8rem;
+    width: 75%;
+  }
+}
+.hero form {
+  margin: 2rem 0 2rem 0;
+  position: relative;
+}
+@media only screen and (min-width: 901px) {
+  .hero form {
+    width: 100%;
+  }
+}
+.hero form:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  background-image: url("../images/icon-error.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  left: 75%;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+.hero form:has(input:focus:invalid)::after {
+  opacity: 1;
+}
+.hero form input[type=email] {
+  width: 80%;
+  min-width: 20rem;
+  height: 3.5rem;
+  border-radius: 3rem;
+  color: var(--Desaturated-Red);
+  border: 2px solid var(--Desaturated-Red);
+  padding: 2rem 4rem;
+  font-size: 1.7rem;
+  font-weight: 400;
+  position: relative;
+}
+.hero form input[type=email]:focus {
+  outline: none;
+  box-shadow: 0 1rem 2rem var(--Desaturated-Red);
+}
+.hero form input[type=email]::-webkit-input-placeholder {
+  color: var(--Soft-Red);
+}
+.hero form button {
+  position: absolute;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 3rem;
+  background: var(--gradinet-2);
+  transform: translateX(-5rem);
+}
+.hero form button img {
+  transition: all 0.3s ease-in-out;
+}
+@media only screen and (min-width: 901px) {
+  .hero form button {
+    transform: translateX(-7rem);
+  }
+}
+.hero form button:hover {
+  background: var(--Soft-Red);
+}
+.hero form button:hover img {
+  transform: scale(1.2) translateX(5px);
+}/*# sourceMappingURL=main.css.map */

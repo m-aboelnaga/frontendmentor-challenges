@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product preview card component</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <main>
+      <section class="card">
+        <picture class="card__img">
+          <source
+            media="(max-width: 799px)"
+            srcset="./images/image-product-mobile.jpg"
+          />
+          <source
+            media="(min-width: 800px)"
+            srcset="./images/image-product-desktop.jpg"
+          />
+          <img src="./images/image-product-desktop.jpg" alt="" />
+        </picture>
+
+        <div class="card__info">
+          <p class="tag">perfume</p>
+          <h2>Gabrielle Essence Eau De Perfum</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa
+            praesentium tempore quis debitis labore expedita libero
+            reprehenderit perspiciatis dolorem iste cum, natus modi aliquid
+            saepe dolor impedit tenetur ratione est.
+          </p>
+          <div class="card__price">
+            <div class="card__price-sale">$149.991</div>
+            <div class="card__price-old">$169.99</div>
+          </div>
+          <a href="#" class="card__cta">
+            <img src="./images/icon-cart.svg" alt="" />
+            <span> Add to Cart</span>
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

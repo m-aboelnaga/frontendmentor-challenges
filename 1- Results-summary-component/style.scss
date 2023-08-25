@@ -1,0 +1,210 @@
+@import "./reset.scss";
+
+:root {
+    --floral-white: rgba(255, 251, 242, 0.678);
+    --majorelle-blue: rgb(102, 76, 220);
+    --delft-blue: rgb(52, 36, 227);
+    --majorelle-blue-1: rgb(80, 74, 255);
+    --gradient: linear-gradient(var(--majorelle-blue), var(--majorelle-blue-1));
+    --shadow: rgba(149, 157, 165, 0.3) 0px 8px 30px;
+    --font: "Hanken Grotesk", sans-serif;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+
+    @include mobile {
+        display: block;
+    }
+}
+
+section.card {
+    font-family: var(--font);
+    height: 51rem;
+    width: 70rem;
+    border-radius: 5rem;
+
+    box-shadow: var(--shadow);
+
+    @include flex-center;
+
+    @include mobile {
+        height: auto;
+        width: 100vw;
+        flex-direction: column;
+    }
+
+    .result {
+        height: 100%;
+        background: var(--gradient);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        border-radius: 5rem;
+        padding: 4rem;
+
+        @include mobile {
+            height: 75%;
+            width: 100%;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            color: var(--floral-white);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .score {
+            width: 20rem;
+            height: 20rem;
+            border-radius: 50%;
+            @include flex-center;
+            flex-direction: column;
+            gap: 0.5rem;
+            background: linear-gradient(var(--delft-blue), transparent);
+            color: white;
+
+            @include mobile {}
+
+            h2 {
+                font-size: 5rem;
+
+            }
+
+            p {
+                font-size: 2rem;
+                color: #bebebe;
+            }
+        }
+
+        h3 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            color: rgb(222, 222, 222);
+            width: 75%;
+            text-align: center;
+            font-size: 1.4rem;
+        }
+    }
+
+    .summary {
+        width: 50%;
+        height: 100%;
+        padding-top: 2rem;
+
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+        flex-direction: column;
+        padding: 3rem;
+
+        @include mobile {
+            width: 100%;
+            height: 100%;
+            padding: 0 4rem 0;
+            align-items: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #2a2a2a;
+            margin-bottom: 2rem;
+        }
+
+        .items {
+            width: 100%;
+            height: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+
+            @include mobile {}
+
+            .item {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 2rem 4rem;
+                font-size: 2rem;
+                margin-bottom: 1rem;
+
+                @include mobile {}
+
+                &:nth-of-type(1) {
+                    color: #ed8f90;
+                    background: #fff6f5;
+                }
+
+                &:nth-of-type(2) {
+                    color: #f7d596;
+                    background: #fffbf2;
+                }
+
+                &:nth-of-type(3) {
+                    color: #56ae96;
+                    background: #f2fbfa;
+                }
+
+                &:nth-of-type(4) {
+                    color: #3337a2;
+                    background: #f3f3fd;
+                }
+            }
+        }
+    }
+
+    a.cta {
+
+        &:link,
+        &:visited {
+            text-decoration: none;
+            border: none;
+            background: var(--gradient);
+            font-size: 2.2rem;
+            color: rgb(224, 224, 224);
+            border-radius: 2.5rem;
+            text-align: center;
+            margin-top: 5rem;
+            margin-bottom: -1.5rem;
+
+            padding: 2rem 10rem;
+            transition: all 0.3s ease-in-out;
+
+            @include mobile {
+                margin-bottom: 1rem;
+
+                padding: 3rem 14rem;
+            }
+        }
+
+        &:hover {
+            background: linear-gradient(rgba(0, 0, 106, 0.776), rgba(0, 0, 65, 0.776));
+            box-shadow: var(--shadow);
+            transform: translateY(-2px);
+
+        }
+
+        &:active {
+            transform: translateY(-4px);
+        }
+    }
+}

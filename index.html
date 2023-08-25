@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor Challenges</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+        gap: 2rem;
+        background-color: azure;
+        background: url("./asset-1.svg");
+        background-size: cover;
+        background-position: center;
+      }
+      :root {
+        counter-reset: link;
+      }
+      a,
+      a:link,
+      a:visited {
+        position: relative;
+        counter-increment: link;
+        font-size: clamp(12px, 5vw, 3rem);
+        text-decoration: none;
+
+        color: whitesmoke;
+        padding: 1rem 3rem;
+        border-radius: 5rem;
+        transition: all 0.3s ease-in-out;
+        box-shadow: rgba(149, 157, 165, 0.6) 0px 8px 20px;
+      }
+
+      a:hover {
+        box-shadow: rgba(149, 157, 165, 0.6) 0px 12px 35px;
+        transform: translateY(-4px);
+      }
+      a:active {
+        transform: translateY(0);
+      }
+      a:nth-of-type(even) {
+        background: linear-gradient(220.55deg, #a531dc 0%, #4300b1 100%);
+      }
+      a:nth-of-type(odd) {
+        background: linear-gradient(220.55deg, #8fff85 0%, #39a0ff 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <a href="./1- Results-summary-component/">Results Summary Component</a>
+    <a href="./2- Product-preview-card-component/"
+      >Product preview card component</a
+    >
+    <a href="./3- Interactive-rating-component/index.html"
+      >Interactive Rating Component</a
+    ><a href="./4- Base Apparel coming soon page/index.html"
+      >Base Apparel coming soon page</a
+    >
+  </body>
+</html>
