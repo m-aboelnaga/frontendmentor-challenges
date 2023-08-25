@@ -108,7 +108,9 @@ html {
             text-transform: uppercase;
 
             @include tab {
-                font-size: 8rem;
+                letter-spacing: 4px;
+
+                font-size: 7rem;
 
             }
 
@@ -122,13 +124,13 @@ html {
 
         p {
             color: var(--Desaturated-Red);
-            line-height: 1.8;
-            font-size: clamp(1.2rem, 5vw, 3rem);
+            line-height: 1.4;
+            font-size: 1.8rem;
 
             font-weight: 400;
 
             @include tab {
-                font-size: 2.5rem;
+                font-size: 2.0rem;
                 width: 75%;
                 line-height: 1.4;
 
@@ -155,9 +157,14 @@ html {
             background-image: url('../images/icon-error.svg');
             background-repeat: no-repeat;
             background-size: cover;
-            left: 75%;
             opacity: 0;
             transition: all 0.4s ease-in-out;
+            left: 79%;
+            top: 12%;
+
+            @include tab {
+                left: 65%;
+            }
         }
 
         &:has(input:focus:invalid)::after {

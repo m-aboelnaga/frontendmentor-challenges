@@ -92,7 +92,8 @@ html {
 }
 @media only screen and (min-width: 901px) {
   .hero .info h1 {
-    font-size: 8rem;
+    letter-spacing: 4px;
+    font-size: 7rem;
   }
 }
 .hero .info h1 span {
@@ -102,13 +103,13 @@ html {
 }
 .hero .info p {
   color: var(--Desaturated-Red);
-  line-height: 1.8;
-  font-size: clamp(1.2rem, 5vw, 3rem);
+  line-height: 1.4;
+  font-size: 1.8rem;
   font-weight: 400;
 }
 @media only screen and (min-width: 901px) {
   .hero .info p {
-    font-size: 2.5rem;
+    font-size: 2rem;
     width: 75%;
     line-height: 1.4;
   }
@@ -131,9 +132,15 @@ html {
   background-image: url("../images/icon-error.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  left: 75%;
   opacity: 0;
   transition: all 0.4s ease-in-out;
+  left: 79%;
+  top: 12%;
+}
+@media only screen and (min-width: 901px) {
+  .hero form:after {
+    left: 65%;
+  }
 }
 .hero form:has(input:focus:invalid)::after {
   opacity: 1;
