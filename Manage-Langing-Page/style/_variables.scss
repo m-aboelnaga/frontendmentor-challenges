@@ -1,0 +1,86 @@
+:root {
+    //Primary
+    --Bright-Red: hsl(12, 88%, 59%);
+    --Bright-Red-2: hsl(12, 100%, 77%);
+    --Dark-Blue: hsl(228, 39%, 23%);
+
+    //Neutral
+    --Dark-Grayish-Blue: hsl(227, 12%, 61%);
+    --Very-Dark-Blue: hsl(233, 12%, 13%);
+    --Very-Pale-Red: hsl(13, 100%, 96%);
+    --Vary-Light-Gray: hsl(0, 0%, 98%);
+    --font: 'Be Vietnam Pro', sans-serif;
+    --section-padding: 11rem;
+
+    counter-reset: features;
+}
+
+//mixins
+@mixin mobile {
+    @media only screen and (max-width:900px) {
+        @content;
+    }
+}
+
+@mixin tab {
+    @media (min-width:901px) and (max-width:1440px) {
+        @content;
+    }
+}
+
+@mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+//utilities
+.p-x {
+    padding-left: clamp(1.8rem, 10vw, 21.8rem);
+    padding-right: clamp(1.8rem, 10vw, 22rem);
+
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.display-none-desktop {
+    @media only screen and (min-width:901px) {
+        display: none;
+        visibility: hidden;
+    }
+
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes fromleft {
+    0% {
+        transform: translateY(-300%);
+    }
+
+    50% {
+        transform: translateY(-50%);
+    }
+
+    100% {
+        transform: translateY(0);
+
+    }
+}

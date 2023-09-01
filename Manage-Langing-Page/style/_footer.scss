@@ -1,0 +1,161 @@
+footer {
+    background-color: var(--Very-Dark-Blue);
+    color: var(--Dark-Grayish-Blue);
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: start;
+    justify-items: center;
+    grid-template-areas: 'logo nav1 nav2 form'
+        'social nav1 nav2 text';
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    @include mobile {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        align-items: center;
+        justify-items: center;
+        grid-template-areas:
+            'form  form'
+            'nav1 nav2'
+            'nav1 nav2'
+            'social social'
+            'logo logo'
+            'text text';
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+
+
+        * {
+            align-self: center;
+            justify-self: center;
+        }
+    }
+
+    .socials {
+        grid-area: social;
+        align-self: self-end;
+
+        justify-self: self-start;
+        width: 15.5rem;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: space-between;
+
+
+        @include mobile {
+            margin-top: 2rem;
+            align-self: center;
+            justify-self: center;
+            scale: 1.7;
+
+        }
+
+        >* {
+
+            width: clamp(2.5rem, 2vw, 3rem);
+            height: clamp(2.5rem, 2vw, 3rem);
+            fill: white;
+            transition: fill 0.3s;
+
+            &:hover {
+                fill: var(--Bright-Red);
+
+            }
+        }
+    }
+
+    .logo-w {
+        grid-area: logo;
+        width: 15.5rem;
+        justify-self: self-start;
+
+        @include mobile {
+            justify-self: center;
+            align-self: center;
+            width: 18rem;
+
+
+        }
+
+    }
+
+    ul.nav {
+
+        font-size: 1.6rem;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        li {
+            list-style-type: none;
+            transition: color 0.3s;
+
+            &:hover {
+                color: var(--Bright-Red);
+            }
+        }
+    }
+
+
+
+    .nav-1 {
+        grid-area: nav1;
+
+    }
+
+    .nav-2 {
+        grid-area: nav2;
+
+    }
+
+    form {
+        grid-area: form;
+        justify-self: self-start;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        margin-bottom: 4rem;
+
+
+        input {
+            background-color: white;
+            padding: 1.5rem 3.5rem;
+            border: none;
+            border-radius: 2rem;
+            outline: none;
+            caret-color: var(--Bright-Red);
+        }
+
+        button {
+            border: none;
+            background-color: var(--Bright-Red);
+            color: white;
+            padding: 1.5rem 2.5rem;
+            border-radius: 3rem;
+            transition: all 0.3s ease;
+
+            &:hover {
+                color: var(--Bright-Red);
+                background-color: var(--Vary-Light-Gray);
+
+            }
+
+        }
+
+    }
+
+    p {
+        grid-area: text;
+        font-size: 1.8rem;
+        width: 100%;
+        align-self: self-end;
+    }
+}

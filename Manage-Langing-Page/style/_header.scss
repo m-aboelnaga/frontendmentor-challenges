@@ -1,0 +1,135 @@
+header {
+    position: relative;
+    @include flex-between;
+
+    @include mobile {
+        justify-content: space-between;
+    }
+
+    .logo {
+        @include mobile {
+            width: 20rem;
+
+        }
+
+        width: 15rem;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .background {
+        @include mobile {
+            width: 200vw;
+            height: 1000vh;
+            background-color: rgba(27, 27, 27, 0.63);
+            position: fixed;
+            transform: translateX(-50%);
+            z-index: 99;
+
+        }
+
+    }
+
+    nav {
+        @include mobile {
+            animation: fade 0.3s;
+
+            background-color: var(--Vary-Light-Gray);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60vw;
+            height: 35vh;
+            z-index: 9999;
+
+            // &::after {
+            //     content: url(../images/sprite/icon-close.svg);
+            //     position: absolute;
+            //     top: 0%;
+            //     right: 0%;
+            //     background-color: var(--Bright-Red);
+            //     border-radius: 50%;
+            //     padding: 1rem;
+            // }
+
+
+
+        }
+
+        width: 40%;
+
+        ul {
+            @include mobile {
+                flex-direction: column;
+                justify-content: space-around;
+                height: 100%;
+                font-size: 1.5rem;
+                font-weight: 600;
+
+
+
+            }
+
+            width: 100%;
+            @include flex-between;
+
+        }
+
+        li {
+            list-style-type: none;
+            font-size: 1.3rem;
+            font-weight: 400;
+            transition: all 0.3s;
+            cursor: pointer;
+
+            @include mobile {
+                font-size: 1.5rem;
+                font-weight: 600;
+
+
+            }
+
+            &:hover {
+                color: var(--Bright-Red);
+            }
+        }
+    }
+
+    .icon-hamburger {
+        cursor: pointer;
+        display: grid;
+        place-content: center;
+        grid-template-areas: 'overlay';
+        transition: all 0.3s;
+        animation: fade 0.3s ease-in-out;
+
+        * {
+            grid-area: overlay;
+            width: 2rem;
+            height: 2rem;
+            z-index: 999;
+
+        }
+
+        &.bg {
+            position: absolute;
+            background-color: var(--Bright-Red);
+            border-radius: 50%;
+            padding: 1.2rem;
+            z-index: 99999;
+            right: 10%;
+            top: 15%;
+
+        }
+    }
+
+}
+
+.display-none-m {
+    @include mobile {
+        display: none;
+    }
+}
