@@ -36,6 +36,15 @@
 
 }
 
+.bg-white {
+    background-color: white;
+
+}
+
+.fill-black {
+    fill: #000 !important;
+}
+
 *,
 *::before,
 *::after {
@@ -47,16 +56,27 @@
 html {
     font-size: 62.5%;
     font-family: var(--font);
+    overflow-x: hidden;
 
     @include mobile {}
 
 }
+
 
 img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     max-width: 100%;
+}
+
+.hide {
+    display: none;
+
+    * {
+        display: none;
+
+    }
 }
 
 main {
@@ -94,15 +114,56 @@ main {
         align-items: center;
         justify-content: space-between;
 
+        @include mobile {}
+
         @include mobile {
-            width: 80vw;
+            &.mobile-nav {
+
+                ul {
+                    display: none !important;
+                }
+            }
+
+
+            width: 100vw;
+            padding: 2rem;
+            margin: 0 !important;
             grid-area: imgs-slider;
+            margin: 4rem;
+
+        }
+
+        .icons {
+            width: 2.5rem;
+
+            cursor: pointer;
+            display: grid;
+            grid-template-areas: 'icon';
+            display: inline-block;
+
+
+            svg {
+                grid-area: icon;
+                fill: white;
+                margin: 0;
+                width: 2.5rem;
+                height: 2.5rem;
+
+                @include mobile {}
+            }
+
         }
 
         .logo {
             color: white;
             font-size: 2.5rem;
             cursor: pointer;
+
+            @include mobile {
+                font-size: 3rem;
+                order: 5;
+
+            }
         }
 
         ul {
@@ -116,6 +177,10 @@ main {
                 color: white;
                 font-size: 1.6rem;
                 cursor: pointer;
+
+                @include mobile {
+                    color: #000;
+                }
             }
         }
     }
