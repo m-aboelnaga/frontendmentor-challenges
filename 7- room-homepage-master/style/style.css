@@ -547,8 +547,14 @@ main #cta-slider {
 main #cta-slider ul > li {
   display: flex;
   align-items: start;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: column;
+}
+@media only screen and (max-width: 900px) {
+  main #cta-slider ul > li {
+    padding: 2rem 3rem;
+    justify-content: space-between;
+  }
 }
 main #cta-slider h1 {
   font-size: 4.5rem;
@@ -564,7 +570,7 @@ main #cta-slider p {
 }
 @media only screen and (max-width: 900px) {
   main #cta-slider p {
-    width: 80%;
+    width: 90%;
     font-size: 2rem;
     line-height: 2.2rem;
   }
@@ -593,6 +599,7 @@ main .about {
 @media only screen and (max-width: 900px) {
   main .about {
     padding: 4rem;
+    margin-bottom: 2rem;
   }
 }
 main .about h2 {
