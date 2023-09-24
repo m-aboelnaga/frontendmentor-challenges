@@ -1,0 +1,64 @@
+.underline {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 4px;
+        background-color: var(--Lime-Green);
+        transition: all 0.3s;
+        z-index: 5;
+        bottom: -50%;
+        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+
+    }
+
+    &:hover::after {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+.hide-mob {
+    @include mobile {
+        display: none;
+    }
+
+}
+
+a.cta {
+
+    &,
+    &:link,
+    &:visited {
+        text-decoration: none;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: white;
+        background: linear-gradient(90deg, var(--Lime-Green), var(--Bright-Cyan));
+        padding: 1.5rem 2.5rem;
+        border-radius: 5rem;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        max-width: 16.5rem;
+    }
+
+    &:hover {
+        background: linear-gradient(180deg, var(--Lime-Green), var(--Bright-Cyan));
+        transform: translateY(-3px);
+    }
+}
+
+.hide-mobile {
+    @include mobile {
+        display: none;
+    }
+}
+
+
+.show-mobile {
+    @include mobile {
+        display: block;
+    }
+}
